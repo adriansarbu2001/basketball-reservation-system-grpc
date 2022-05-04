@@ -5,14 +5,14 @@
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
         <option name="distributionType" value="DEFAULT_WRAPPED" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/BasketballReservationSystem" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/BasketballReservationSystemJava" />
         <option name="gradleJvm" value="corretto-16" />
         <option name="modules">
           <set>
-            <option value="$PROJECT_DIR$/BasketballReservationSystem" />
-            <option value="$PROJECT_DIR$/BasketballReservationSystem/BrsModel" />
-            <option value="$PROJECT_DIR$/BasketballReservationSystem/BrsPersistence" />
-            <option value="$PROJECT_DIR$/BasketballReservationSystem/BrsServer" />
+            <option value="$PROJECT_DIR$/BasketballReservationSystemJava" />
+            <option value="$PROJECT_DIR$/BasketballReservationSystemJava/BrsModel" />
+            <option value="$PROJECT_DIR$/BasketballReservationSystemJava/BrsPersistence" />
+            <option value="$PROJECT_DIR$/BasketballReservationSystemJava/BrsServer" />
           </set>
         </option>
       </GradleProjectSettings>

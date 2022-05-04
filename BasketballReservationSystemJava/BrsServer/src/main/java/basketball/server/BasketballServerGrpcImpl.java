@@ -33,7 +33,7 @@ public class BasketballServerGrpcImpl extends BasketballServiceGrpc.BasketballSe
         this.matchRepository = matchRepository;
         this.ticketRepository = ticketRepository;
         observers = new LinkedHashSet<>();
-        loggedUsers = new LinkedHashSet<Long>();
+        loggedUsers = new LinkedHashSet<>();
     }
     @Override
     public StreamObserver<BasketballRequest> subscribe(StreamObserver<BasketballResponse> responseObserver) {

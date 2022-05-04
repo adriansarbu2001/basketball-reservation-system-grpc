@@ -1,0 +1,5 @@
+rootProject.name = 'BasketballReservationSystemJava'
+include 'BrsModel'
+include 'BrsPersistence'
+include 'BrsServer'
+

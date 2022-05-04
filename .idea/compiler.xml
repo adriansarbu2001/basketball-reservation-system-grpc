@@ -2,6 +2,19 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
+      <module name="BasketballReservationSystem" target="16" />
+      <module name="BasketballReservationSystem.BrsModel" target="16" />
+      <module name="BasketballReservationSystem.BrsModel.main" target="16" />
+      <module name="BasketballReservationSystem.BrsModel.test" target="16" />
+      <module name="BasketballReservationSystem.BrsPersistence" target="16" />
+      <module name="BasketballReservationSystem.BrsPersistence.main" target="16" />
+      <module name="BasketballReservationSystem.BrsPersistence.test" target="16" />
+      <module name="BasketballReservationSystem.BrsServer" target="16" />
+      <module name="BasketballReservationSystem.BrsServer.main" target="16" />
+      <module name="BasketballReservationSystem.BrsServer.src" target="16" />
+      <module name="BasketballReservationSystem.BrsServer.test" target="16" />
+      <module name="BasketballReservationSystem.main" target="16" />
+      <module name="BasketballReservationSystem.test" target="16" />
       <module name="test" target="16" />
       <module name="test.main" target="16" />
       <module name="test.test" target="16" />
