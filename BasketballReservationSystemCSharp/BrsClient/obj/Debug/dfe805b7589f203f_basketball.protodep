@@ -1,0 +1,2 @@
+obj\Debug\proto/Basketball.cs \
+obj\Debug\proto/BasketballGrpc.cs: proto/basketball.proto
