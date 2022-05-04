@@ -1,0 +1,56 @@
+syntax = "proto3";
+
+package chat.protocol;
+option java_package = "basketball.network.protobuffprotocol";
+option csharp_namespace = "BasketballNetworking";
+option java_outer_classname = "BasketballProtobufs";
+
+service BasketballService {
+  rpc login(BasketballRequest) returns (BasketballResponse);
+  rpc logout(BasketballRequest) returns (BasketballResponse);
+  rpc findAll(BasketballRequest) returns (BasketballResponse);
+  rpc saveTicket(BasketballRequest) returns (BasketballResponse);
+  rpc availableMatchesDescending(BasketballRequest) returns (BasketballResponse);
+  rpc subscribe(stream BasketballRequest) returns (stream BasketballResponse);
+}
+
+message UserDto {
+  int64 id = 1;
+  string username = 2;
+  string password = 3;
+}
+
+message TicketDto {
+  int64 id = 1;
+  string clientName = 2;
+  int32 noSeats = 3;
+  int64 matchId = 4;
+}
+
+message MatchDto {
+  int64 id = 1;
+  string name = 2;
+  float ticketPrice = 3;
+  int32 noAvailableSeats = 4;
+}
+
+message BasketballRequest {
+  enum Type {UNKNOWN = 0; LOGIN = 1; LOGOUT = 2; SAVE_TICKET = 3; FIND_ALL_MATCH = 4; AVAILABLE_MATCHES_DESCENDING = 5;}
+  Type type = 1;
+
+  // One of the following will be filled in, depending on the type.
+  oneof payload {
+    UserDto userDto = 2;
+    TicketDto ticketDto = 3;
+  }
+}
+
+message BasketballResponse {
+  enum Type {UNKNOWN = 0; OK = 1; ERROR = 2; TICKET_SOLD = 3;}
+  Type type = 1;
+
+  // One of the following will be filled in, depending on the type.
+  string error = 2;
+  repeated MatchDto matchDtos = 3;
+  UserDto userDto = 4;
+}

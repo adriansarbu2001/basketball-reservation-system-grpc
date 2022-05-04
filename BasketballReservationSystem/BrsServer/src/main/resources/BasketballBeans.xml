@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <util:properties id="jdbcProps" location="classpath:basketballserver.properties"/>
+
+    <bean id="accountValidator" class="basketball.model.validator.AccountValidator"/>
+    <bean id="matchValidator" class="basketball.model.validator.MatchValidator"/>
+    <bean id="ticketValidator" class="basketball.model.validator.TicketValidator"/>
+
+    <bean id="userRepository" class="basketball.persistence.repository.hibernate.UserDBRepositoryHibernate">
+        <constructor-arg ref="jdbcProps"/>
+        <constructor-arg ref="accountValidator"/>
+    </bean>
+
+    <bean id="matchRepository" class="basketball.persistence.repository.hibernate.MatchDBRepositoryHibernate">
+        <constructor-arg ref="jdbcProps"/>
+        <constructor-arg ref="matchValidator"/>
+    </bean>
+
+    <bean id="ticketRepository" class="basketball.persistence.repository.hibernate.TicketDBRepositoryHibernate">
+        <constructor-arg ref="jdbcProps"/>
+        <constructor-arg ref="ticketValidator"/>
+    </bean>
+
+    <bean id="service" class="basketball.server.BasketballServerGrpcImpl">
+        <constructor-arg ref="userRepository"/>
+        <constructor-arg ref="matchRepository"/>
+        <constructor-arg ref="ticketRepository"/>
+    </bean>
+
+</beans>
