@@ -1,5 +1,8 @@
 # basketball-reservation-system-grpc
 
+## About:
+A system for selling tickets at a basketball competition.
+
 ## Stacks:
 - Java
 - C#
